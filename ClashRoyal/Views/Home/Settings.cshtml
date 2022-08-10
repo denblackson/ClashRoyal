@@ -1,0 +1,36 @@
+﻿@model AllPlayData
+@{
+	string[] AllMap = { "Poison Spell", "CommonField", "Rage Spell", "Haste Spell" };
+	string[] listLanguage = { "UA", "EN" };
+}
+<div class="setting-panel">
+	<div class="row">
+		<div class="col-md-4 offset-md-4">
+
+			<form method="post" asp-controller="Home" asp-action="Settings">
+				<h1>@Model.LanguagePlayer.ConfigLanguage</h1>
+
+				<input name="Language" type="submit" value="EN">
+				<input name="Language" type="submit" value="UA">
+
+
+				<h1>@Model.LanguagePlayer.ConfigMap</h1>
+				@foreach (string map in AllMap)
+				{
+					<input name="map" type="submit" value="@map">
+				}
+
+			</form>
+
+			<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@Model.LanguagePlayer.ConfigBack</a>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
